@@ -18,11 +18,11 @@ def read_data_from_file(file):
 def estimate_time(name):
     if "Staffel" in name:
         if "Big Bang" in name or "Family Guy" in name or "Brooklyn Nine-Nine" in name or "New Girl" in name or "How I Met" in name or "Rick and Morty" in name:
-            return 0.2
+            return 0.4
         else:
-            return 0.45
+            return 0.75
     else:
-        return 1.5
+        return 1.8
 
 def get_list_of_dates(start,end):
     dates = []
@@ -31,7 +31,7 @@ def get_list_of_dates(start,end):
         dates.append(start + datetime.timedelta(days=i))
     return dates
 
-data = read_data_from_file('NetflixViewingHistory.csv')
+data = read_data_from_file('history.csv')
 calendar = get_list_of_dates(datetime.datetime(2015, 6, 1,0,0,0),datetime.datetime.now())
 #calendar = get_list_of_dates(datetime.datetime(2016, 10, 7,0,0,0),datetime.datetime.now())
 
